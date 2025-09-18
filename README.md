@@ -1,0 +1,1 @@
+# nextjsShoppingPlatform-template

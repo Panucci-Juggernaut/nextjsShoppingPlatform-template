@@ -17,49 +17,6 @@ import { formatCurrency } from '@/lib/utils';
 import sampleData from '@/db/sample-data';
 require('dotenv').config();
 
-PurchaseReceiptEmail.PreviewProps = {
-  order: {
-    id: crypto.randomUUID(),
-    userId: '123',
-    user: {
-      name: 'John Doe',
-      email: 'test@test.com',
-    },
-    paymentMethod: 'Stripe',
-    shippingAddress: {
-      fullName: 'John Doe',
-      streetAddress: '123 Main st',
-      city: 'New York',
-      postalCode: '10001',
-      country: 'US',
-    },
-    createdAt: new Date(),
-    totalPrice: '100',
-    taxPrice: '10',
-    shippingPrice: '10',
-    itemsPrice: '80',
-    orderitems: sampleData.products.map((x) => ({
-      name: x.name,
-      orderId: '123',
-      productId: '123',
-      slug: x.slug,
-      qty: x.stock,
-      image: x.images[0],
-      price: x.price.toString(),
-    })),
-    isDelivered: true,
-    deliveredAt: new Date(),
-    isPaid: true,
-    paidAt: new Date(),
-    paymentResult: {
-      id: '123',
-      status: 'succeeded',
-      pricePaid: '100',
-      email_address: 'test@test.com',
-    },
-  },
-} satisfies OrderInformationProps;
-
 const dateFormatter = new Intl.DateTimeFormat('en', { dateStyle: 'medium' });
 
 type OrderInformationProps = {
